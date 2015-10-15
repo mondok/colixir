@@ -4,14 +4,26 @@ A simple library for colorizing output text in Elixir.  This library simply wrap
 the [IO.ANSI module](http://elixir-lang.org/docs/master/elixir/IO.ANSI.html).
 
 ## Usage
+Basic usage is as follows:
 ```
 content = Colixir.colorize("hello world", :red)
 IO.puts content
 ```
+
 You can also chain the output with formatting.
 ```
 content = Colixir.colorize("hello world", :red)
           |> Colixir.colorize(:bright)
+          |> Colixir.colorize(:blue_background)
+
+IO.puts content
+```
+
+Another option is to concat text and use multiple colors
+```
+content = Colixir.colorize("hello world", :red)
+          |> Colixir.colorize(:bright)
+          |> Colixir.colorize("from Mars", :yellow)
           |> Colixir.colorize(:blue_background)
 
 IO.puts content
