@@ -18,4 +18,11 @@ defmodule Colixir do
     new_text = IO.ANSI.format([color, next_text], true)
     "#{prev_text} #{new_text}"
   end
+
+  @doc """
+  Determines if current machine supports ANSI coloring
+  """
+  def can_color? do
+    IO.ANSI.enabled?
+  end
 end

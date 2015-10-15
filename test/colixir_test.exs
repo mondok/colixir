@@ -21,4 +21,9 @@ defmodule ColixirTest do
     output = Colixir.colorize("test", :red) |> Colixir.colorize("test2", :bright)
     assert output != nil
   end
+
+  test "can check color capability" do
+    cc = Colixir.can_color?
+    assert cc
+  end
 end
