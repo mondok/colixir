@@ -1,6 +1,7 @@
 # Colixir
 
-A simple library for colorizing output text in Elixir.  
+A simple library for colorizing output text in Elixir.  This library simply wraps
+the [IO.ANSI module](http://elixir-lang.org/docs/master/elixir/IO.ANSI.html).
 
 ## Usage
 ```
