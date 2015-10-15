@@ -1,6 +1,20 @@
 # Colixir
 
-**TODO: Add description**
+A simple library for colorizing output text in Elixir.  
+
+## Usage
+```
+content = Colixir.colorize("hello world", :red)
+IO.puts content
+```
+You can also chain the output with formatting.
+```
+content = Colixir.colorize("hello world", :red)
+          |> Colixir.colorize(:bright)
+          |> Colixir.colorize(:blue_background)
+
+IO.puts content
+```
 
 ## Installation
 
