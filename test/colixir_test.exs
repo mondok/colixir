@@ -16,4 +16,9 @@ defmodule ColixirTest do
     output = Colixir.colorize("test", :red) |> Colixir.colorize(:bright)
     assert output != nil
   end
+
+  test "can chain formatting with new text" do
+    output = Colixir.colorize("test", :red) |> Colixir.colorize("test2", :bright)
+    assert output != nil
+  end
 end
