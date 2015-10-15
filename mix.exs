@@ -1,13 +1,22 @@
 defmodule Colixir.Mixfile do
   use Mix.Project
 
+  @version "0.0.1"
+
   def project do
     [app: :colixir,
-     version: "0.0.1",
+     version: @version,
      elixir: "~> 1.1",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+
+     # Hex
+     description: description,
+     package: package,
+
+     # Docs
+     name: "Colixir",
+     docs: [source_ref: "v#{@version}", main: "Colixir",
+            source_url: "https://github.com/mondok/colixir"]]
   end
 
   # Configuration for the OTP application
@@ -17,15 +26,19 @@ defmodule Colixir.Mixfile do
     [applications: [:logger]]
   end
 
-  # Dependencies can be Hex packages:
-  #
-  #   {:mydep, "~> 0.3.0"}
-  #
-  # Or git/path repositories:
-  #
-  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
-  #
-  # Type "mix help deps" for more examples and options
+  defp description do
+    """
+    Colixir creates colorized text for terminal output
+    """
+  end
+
+  defp package do
+    [contributors: ["Matt Mondok"],
+     licenses: ["Apache 2.0"],
+     links: %{"GitHub" => "https://github.com/mondok/colixir"},
+     files: ~w(mix.exs README.md lib)]
+  end
+
   defp deps do
     []
   end
